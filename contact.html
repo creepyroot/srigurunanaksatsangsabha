@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gurudwara Sri Guru Nanak Sat Sang Sabha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --deep-blue: #000080;
+            --cream: #FFF8E1;
+            --gold: #D4AF37;
+            --light-gold: #F5E6C8;
+            --white: #FFFFFF;
+            --dark-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Noto Sans Gurmukhi', 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--deep-blue), var(--saffron));
+            color: var(--light-gold);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 8px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            height: auto; /* Make logo responsive */
+            max-width: 100%; /* Ensure it doesn't overflow */
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+        }
+        
+        nav {
+            background: linear-gradient(to right, var(--saffron), var(--gold));
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 10px; /* Adjusted for smaller screens */
+        }
+        
+        nav a {
+            color: var(--deep-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem; /* Adjusted for better readability */
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .manager-card {
+            display: flex;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin: 0 auto;
+            max-width: 800px;
+            align-items: center; /* Center items vertically */
+        }
+        
+        .manager-card img {
+            border-radius: 8px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 2rem; /* Space between image and text */
+        }
+        
+        .manager-info {
+            flex: 1; /* Allow text to take remaining space */
+        }
+        
+        .section-title {
+            color: var(--deep-blue);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .manager-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--deep-blue);
+        }
+        
+        .manager-title {
+            font-size: 1.2rem;
+            color: var(--dark-red);
+            margin-bottom: 1rem;
+        }
+        
+        .manager-description {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--deep-blue), #000033);
+            color: var(--light-gold);
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .footer-logo {
+            height: auto; /* Make footer logo responsive */
+            max-width: 100%; /* Ensure it doesn't overflow */
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .manager-card {
+                flex-direction: column; /* Stack image and text on smaller screens */
+                align-items: center; /* Center items */
+            }
+            .manager-card img {
+                margin-right: 0; /* Remove right margin on smaller screens */
+                margin-bottom: 1rem; /* Add bottom margin */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="gurudwara-logo.png" alt="Gurudwara Logo" class="logo">
+        <h1>Gurudwara Sri Guru Nanak Sat Sang Sabha</h1>
+        <h1>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ, ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="committee.html">Committee</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="dispensary.html">Dispensary</a></li>
+        </ul>
+    </nav>
+    
+    <section class="section">
+        <div class="manager-card">
+            <img src="manager-photo.jpg" alt="Manager Photo"> <!-- Replace with the manager's photo -->
+            <div class="manager-info">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="manager-name">Pradeep Singh</div>
+                <div class="manager-title">Manager</div>
+                <p class="manager-description">...... is dedicated to ensuring the smooth operation of the dispensary and is here to assist you with any inquiries.</p>
+                <p>Phone: (+91) 123456789</p>
+                <p>Email: info@gurudwaraexample.com</p>
+                <p>Address: F1/4 VASANT VIHAR-1 NEW DELHI, DELHI-110057, INDIA</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <img src="gurudwara-logo-white.png" alt="Gurudwara Logo" class="footer-logo">
+        <p>Join us in prayer and community</p>
+        
+        <div class="copyright">
+            © 2025 Gurudwara Sri Guru Nanak Sat Sang Sabha. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurudwara Sri Guru Nanak Sat Sang Sabha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --deep-blue: #000080;
+            --cream: #FFF8E1;
+            --gold: #D4AF37;
+            --light-gold: #F5E6C8;
+            --white: #FFFFFF;
+            --dark-red: #8B0000;
+        }
+        
+        body {
+            font-family: 'Noto Sans Gurmukhi', 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--deep-blue), var(--saffron));
+            color: var(--light-gold);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 8px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            height: auto; /* Make logo responsive */
+            max-width: 100%; /* Ensure it doesn't overflow */
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+        }
+        
+        nav {
+            background: linear-gradient(to right, var(--saffron), var(--gold));
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 10px; /* Adjusted for smaller screens */
+        }
+        
+        nav a {
+            color: var(--deep-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem; /* Adjusted for better readability */
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 128, 0.7), rgba(255, 153, 51, 0.5)), url('golden-temple-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh; /* Responsive height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gold);
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .hero-content {
+            max-width: 90%; /* Responsive padding */
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem; /* Responsive font size */
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem; /* Responsive font size */
+            margin-bottom: 2rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--deep-blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            border: 2px solid var(--deep-blue);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .button:hover {
+            background-color: var(--deep-blue);
+            color: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            color: var(--deep-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--saffron), var(--gold));
+            border-radius: 2px;
+        }
+        
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--light-gold);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .event-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .event-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--saffron);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .event-content {
+            padding: 1.5rem;
+        }
+        
+        .event-content h3 {
+            color: var(--deep-blue);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .event-content p {
+            color: #555;
+        }
+        
+        .read-more {
+            color: var(--saffron);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .schedule {
+            background: linear-gradient(135deg, var(--light-gold), var(--white));
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px dashed var(--gold);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            font-weight: bold;
+            color: var(--deep-blue);
+        }
+        
+        .schedule-name {
+            color: var(--dark-red);
+            font-weight: bold;
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--deep-blue), #000033);
+            color: var(--light-gold);
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .footer-logo {
+            height: auto; /* Make footer logo responsive */
+            max-width: 100%; /* Ensure it doesn't overflow */
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            margin: 0 10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            color: var(--deep-blue);
+            line-height: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            background-color: var(--saffron);
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem; /* Smaller font size for mobile */
+            }
+            .hero p {
+                font-size: 1rem; /* Smaller font size for mobile */
+            }
+            .section-title {
+                font-size: 2rem; /* Smaller title for mobile */
+            }
+            nav a {
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="gurudwara-logo.png" alt="Gurudwara Logo" class="logo">
+        <h1>Gurudwara Sri Guru Nanak Sat Sang Sabha</h1>
+        <h1>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ, ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="committee.html">Committee</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="dispensary.html">Dispensary</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Experience Divine Peace and Blessings</h2>
+            <p>Join our spiritual community in prayer and devotion</p>
+            <a href="#" class="button">View Today's Schedule</a>
+        </div>
+    </section>
+    
+    <section class="section" style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('pattern.png');">
+        <h2 class="section-title">Daily Schedule</h2>
+        <div class="schedule">
+             <div class="schedule-item">
+                <span class="schedule-name">Sukhmani Sahib</span>
+                <span class="schedule-time">5:00 AM - 6:00 AM</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Asa Di Var</span>
+                <span class="schedule-time">7:00 AM - 8:15 AM</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Rehras Sahib</span>
+                <span class="schedule-time">6:30 PM - 7:00 PM</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Kirtan Darbar</span>
+                <span class="schedule-time">7:15 PM - 8:15 PM</span>
+            </div>
+            <div class="schedule-item">
+                <span class="schedule-name">Langar Service (only on Sunday)</span>
+                <span class="schedule-time">11:00 AM - 12:00 PM</span>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <img src="gurudwara-logo-white.png" alt="Gurudwara Logo" class="footer-logo">
+        <p>Join us in prayer and community</p>
+        <p>Address: F1/4 VASANT VIHAR-1 NEW DELHI, DELHI-110057, INDIA</p>
+        <p>Phone: (+91) 123456789 | Email: info@gurudwaraexample.com</p>
+        
+        <div class="copyright">
+            © 2025 Gurudwara Sri Guru Nanak Sat Sang Sabha. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
